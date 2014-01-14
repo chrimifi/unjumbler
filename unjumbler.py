@@ -1,9 +1,9 @@
 __author__ = 'Chris Fincher'
 
 
-def unjumble(jumble, listfile):
+def unjumble(jumble):
     candidates = set()
-    openfile = open(listfile, 'r')
+    openfile = open('dictionary', 'r')
     wlist = openfile.readlines()
     openfile.close()
     for seq in permutations(jumble):
@@ -27,5 +27,5 @@ def permutations(letters):
 
 
 if __name__ == '__main__':
-    # TODO Handle parameters
-    print(unjumble('dog', 'sample_dict'))
+    jumble = input('Input your jumble: ')
+    print(unjumble(jumble))
